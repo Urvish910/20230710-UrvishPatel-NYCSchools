@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.example.a20230710_urvishpatel_nycschools.model.response.SchoolResponseItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="#7DB1DC"
+        android:padding="2dp">
+
+        <TextView
+            android:id="@+id/tv_schoolName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:paddingBottom="10dp"
+            android:text='@{"School: "+data.school_name}'
+            android:textColor="@color/black"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_schoolStudents"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text='@{"Total Students: "+ data.total_students}'
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_schoolName" />
+
+        <TextView
+            android:id="@+id/tv_schoolEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="email"
+            android:text='@{"School Email: "+ data.school_email}'
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_schoolStudents" />
+        <TextView
+            android:id="@+id/tv_schoolPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autoLink="phone"
+            android:text='@{"School Phone: "+ data.phone_number}'
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_schoolEmail" />
+
+        <TextView
+            android:id="@+id/tv_schoolDBN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text='@{"School DBN: "+ data.dbn}'
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_schoolPhone" />
+
+        <Button
+            android:id="@+id/btn_schoolLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:linksClickable="true"
+            android:autoLink="web"
+            android:backgroundTint="#3A51B7"
+            android:text="@string/web_site"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_schoolDBN" />
+
+        <Button
+            android:id="@+id/btn"
+            android:textSize="15sp"
+            android:layout_width="100dp"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#FFEB3B"
+            android:text="@string/show_details"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_schoolDBN" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
