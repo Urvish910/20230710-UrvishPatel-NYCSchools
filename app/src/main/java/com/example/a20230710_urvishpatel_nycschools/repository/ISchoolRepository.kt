@@ -9,6 +9,6 @@ import retrofit2.Response
 * and local database.
 * */
 interface ISchoolRepository {
-    suspend fun getSchoolList() : Response<SchoolResponse>
-    suspend fun getSatList(dbn:String) : Response<SatResponse>
+    suspend fun getSchoolList(): Response<SchoolResponse>
+    suspend fun getSatList(dataBase: String): Response<SatResponse>
 }

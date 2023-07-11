@@ -56,7 +56,7 @@ class SatViewModelTest {
             val viewModel = SatViewModel(repository)
 
             viewModel.satSchoolData.observeForever(satResponseObserver)
-            viewModel.pb.observeForever(progressBarObserver)
+            viewModel.progressbar.observeForever(progressBarObserver)
 
             viewModel.getSatSchool("30Q501")
 
@@ -72,7 +72,7 @@ class SatViewModelTest {
             verify(progressBarObserver).onChanged(false)
 
             viewModel.satSchoolData.removeObserver(satResponseObserver)
-            viewModel.pb.removeObserver(progressBarObserver)
+            viewModel.progressbar.removeObserver(progressBarObserver)
 
         }
 
@@ -92,7 +92,7 @@ class SatViewModelTest {
             val viewModel = SatViewModel(repository)
 
             viewModel.satSchoolData.observeForever(satResponseObserver)
-            viewModel.pb.observeForever(progressBarObserver)
+            viewModel.progressbar.observeForever(progressBarObserver)
             viewModel.message.observeForever(messageObserver)
 
             viewModel.getSatSchool("30Q501")
@@ -103,7 +103,7 @@ class SatViewModelTest {
 
             viewModel.message.removeObserver(messageObserver)
             viewModel.satSchoolData.removeObserver(satResponseObserver)
-            viewModel.pb.removeObserver(progressBarObserver)
+            viewModel.progressbar.removeObserver(progressBarObserver)
 
         }
 

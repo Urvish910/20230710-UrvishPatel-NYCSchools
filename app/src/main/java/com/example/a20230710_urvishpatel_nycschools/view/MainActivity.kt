@@ -41,9 +41,9 @@ class MainActivity : AppCompatActivity() {
     private fun observerLiveData() {
         schoolViewModel.progressBarMLD.observe(this) {
             if (it)
-                bindingUtil.pb.visibility = View.VISIBLE
+                bindingUtil.progressBar.visibility = View.VISIBLE
             else
-                bindingUtil.pb.visibility = View.GONE
+                bindingUtil.progressBar.visibility = View.GONE
         }
 
         bindingUtil.data = schoolViewModel

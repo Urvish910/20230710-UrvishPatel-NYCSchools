@@ -29,56 +29,51 @@
             tools:context=".view.SATschoolActivity">
 
             <TextView
-                android:textAlignment="center"
                 android:id="@+id/tv_schoolName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:fontFamily="monospace"
                 android:text='@{"School: "+ data.school_name}'
+                android:textAlignment="center"
                 android:textSize="22sp"
                 android:textStyle="bold" />
 
             <TextView
-                android:textAlignment="center"
-
                 android:id="@+id/tv_reading"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text='@{"Reading AVG Score: "+ data.sat_critical_reading_avg_score}'
+                android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="normal" />
 
             <TextView
-                android:textAlignment="center"
-
                 android:id="@+id/tv_writing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text='@{"Writing AVG Score: "+ data.sat_writing_avg_score}'
+                android:textAlignment="center"
                 android:textSize="20sp"
-                android:textStyle="normal"
-
-                />
+                android:textStyle="normal" />
 
             <TextView
-                android:textAlignment="center"
-
                 android:id="@+id/tv_math"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text='@{"Math AVG Score: "+ data.sat_math_avg_score}'
+                android:textAlignment="center"
                 android:textSize="20sp"
                 android:textStyle="normal" />
 
             <ProgressBar
-                android:id="@+id/pb_check"
+                android:id="@+id/progressBar_check"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:visibility="gone" />
-
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

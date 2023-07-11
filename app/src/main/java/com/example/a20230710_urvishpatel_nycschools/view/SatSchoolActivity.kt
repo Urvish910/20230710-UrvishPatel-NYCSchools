@@ -38,12 +38,12 @@ class SatSchoolActivity : AppCompatActivity() {
                 binding.tvSchoolName.text = "Sorry No Data is Available. Please try later"
             }
         }
-        viewModel.pb.observe(this) {
+        viewModel.progressbar.observe(this) {
 
             if (it)
-                binding.pbCheck.visibility = View.VISIBLE
+                binding.progressBarCheck.visibility = View.VISIBLE
             else
-                binding.pbCheck.visibility = View.GONE
+                binding.progressBarCheck.visibility = View.GONE
         }
     }
 

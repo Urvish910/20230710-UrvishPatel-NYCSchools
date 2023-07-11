@@ -24,7 +24,7 @@ class SatViewModel @Inject constructor(private val repository: ISchoolRepository
 
     val satSchoolData = MutableLiveData<SatResponse>()
     val message = MutableLiveData<String>()
-    val pb = MutableLiveData<Boolean>()
+    val progressbar = MutableLiveData<Boolean>()
 
     fun getSatSchool(dbn: String) {
         val coroutineExceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
@@ -33,21 +33,20 @@ class SatViewModel @Inject constructor(private val repository: ISchoolRepository
             return@CoroutineExceptionHandler
         }
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
-            pb.postValue(true)
+            progressbar.postValue(true)
             val response = repository.getSatList(dbn)
             if (!response.isSuccessful) {
-                pb.postValue(false)
+                progressbar.postValue(false)
                 message.postValue("Something went wrong, Please try later.")
                 return@launch
             } else if (response.body() == null) {
-                pb.postValue(false)
+                progressbar.postValue(false)
                 message.postValue("No Data Found")
                 return@launch
             }
             satSchoolData.postValue(response.body())
-            pb.postValue(false)
+            progressbar.postValue(false)
             return@launch
         }
     }
-
 }

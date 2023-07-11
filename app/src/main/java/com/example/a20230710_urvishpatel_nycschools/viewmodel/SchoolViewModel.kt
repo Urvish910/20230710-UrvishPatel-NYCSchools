@@ -18,6 +18,7 @@ import javax.inject.Inject
  */
 @HiltViewModel
 class SchoolViewModel @Inject constructor(val repository: ISchoolRepository) : ViewModel() {
+
     val schoolMLD = MutableLiveData<SchoolResponse>()
     val messageMLD = MutableLiveData<String>()
     val progressBarMLD = MutableLiveData<Boolean>()
